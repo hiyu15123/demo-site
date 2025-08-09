@@ -1,0 +1,15 @@
+# node.js dependencies
+node_modules/
+
+# macOS specific files
+.DS_Store
+
+# VSCode 
+.vscode/
+
+# distribution files
+dist/
+
+# logs and temporary files
+*.log
+*.tmp

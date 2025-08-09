@@ -1,0 +1,32 @@
+@use "../global/variable" as *;
+@use "../global/mixin" as *;
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-size: 1.6rem;
+   letter-spacing: 0.16rem;
+   line-height: 1.75;
+   color: var(--color-text);
+   box-sizing: border-box;
+   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+   @include sp {
+      font-size: 1.4rem;
+   }
+}
+
+img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+main {
+   padding-top: 60px;
+   padding-bottom: 16rem;
+   @include sp {
+      padding-bottom: 12rem;
+   }
+}

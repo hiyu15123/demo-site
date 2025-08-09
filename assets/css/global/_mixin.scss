@@ -1,0 +1,13 @@
+@use "./variable" as *;
+
+@mixin sp {
+	@media (max-width: (var(--breakpoint-sp))) {
+		@content;
+	}
+}
+
+@mixin pc {
+	@media (min-width: (var(--breakpoint-pc))) {
+		@content;
+	}
+}

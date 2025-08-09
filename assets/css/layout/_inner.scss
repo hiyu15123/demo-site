@@ -1,0 +1,14 @@
+@use "../global/mixin" as *;
+
+.l-inner {
+   max-width: 120rem;
+   padding-inline: 1.6rem;
+   margin-inline: auto;
+   @include sp {
+      min-width: 100%;
+      padding-inline: 2rem;
+   }
+   &.-lg {
+      max-width: 100%;
+   }
+}

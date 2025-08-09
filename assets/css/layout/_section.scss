@@ -1,0 +1,11 @@
+@use "../global/variable" as *;
+@use "../global/mixin" as *;
+
+.l-section {
+   & + * {
+      margin-top: 12rem;
+      @include sp {
+         margin-top: 8rem;
+      }
+   }
+}
