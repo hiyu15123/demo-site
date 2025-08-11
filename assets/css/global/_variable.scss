@@ -1,8 +1,8 @@
 :root {
    // color
-   --color-base: #fff;
+   --color-wht: #fff;
    --color-text: #333;
-   --color-pri: #333;
+   --color-pri: #1e44f1;
 
    // animation
    --animation-second: .2s;
@@ -11,3 +11,6 @@
    --breakpoint-pc: 768px;
    --breakpoint-sp: 767px;
 }
+
+$pc: 768px;
+$sp: 767px;
