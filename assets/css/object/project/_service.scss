@@ -1,0 +1,116 @@
+@use "../../global/variable" as *;
+@use "../../global/mixin" as *;
+
+.p-service {
+
+   &__inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      @include sp {
+         grid-template-columns: repeat(1, 1fr);
+      }
+   }
+   &__item {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0.4rem;
+      @include sp {
+         aspect-ratio: 2 / 1;
+      }
+      &:hover {
+         & .p-service__img img {
+            transform: scale(1.05);
+         }
+         & .p-service__filter {
+            opacity: 0;
+         }
+         & .c-icon.-wht {
+            background-color: var(--color-wht);
+            & .c-icon__arrow {
+               stroke: var(--color-pri);
+            }
+         }
+         & .c-icon__arrow.-before {
+            left: 0;
+         }
+         & .c-icon__arrow.-after {
+            left: 100%;
+         }
+      }
+      &.-main {
+         grid-row: span 2;
+         aspect-ratio: 1 / 1;
+      }
+      &.-main .p-service__title p {
+         font-size: 2.8rem;
+         @include sp {
+            font-size: 1.8rem;
+         }
+      }
+   }
+   &__item a {
+      display: block;
+      width: 100%;
+      height: 100%;
+   }
+   &__img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      position: absolute;
+      inset: 0 auto auto 0;
+      z-index: -2;
+      & img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         transition: var(--animation-second);
+      }
+   }
+   &__filter {
+      position: absolute;
+      inset: 0 auto auto 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 100%;
+      transition: var(--animation-second);
+      z-index: -1;
+   }
+   &__title {
+      position: absolute;
+      left: 3.2rem;
+      color: var(--color-wht);
+      line-height: 1.5;
+      font-weight: bold;
+      font-size: 2.4rem;
+      top: 3.2rem;
+      @include sp {
+         font-size: 1.6rem;
+         left: 2.4rem;
+         top: 2.4rem;
+      }
+      & p {
+         &+* {
+            margin-top: 0.4rem;
+         }
+      }
+      & span {
+         display: block;
+         font-weight: 500;
+         font-size: 1.2rem;
+         @include sp {
+            font-size: 1rem;
+         }
+      }
+   }
+   &__icon {
+      position: absolute;
+      right: 3.2rem;
+      bottom: 3.2rem;
+      @include sp {
+         right: 2.4rem;
+         bottom: 2.4rem;
+      }
+   }
+}
