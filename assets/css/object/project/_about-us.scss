@@ -16,6 +16,12 @@
          flex-direction: column;
          align-items: center;
       }
+      &+* {
+         margin-top: 8rem;
+         @include sp {
+            margin-top: 4rem;
+         }
+      }
    }
    &__content {
       background-color: var(--color-wht);
@@ -95,7 +101,8 @@
       max-width: 80px;
       @include sp {
          display: block;
-         // height: 100%;
+         aspect-ratio: 3 / 5;
+         height: 100%;
       }
       img {
          width: 100%;
@@ -197,9 +204,30 @@
    }
    &__img-list {
       width: 100%;
-      // aspect-ratio: 6 / 7;
       position: relative;
    }
    &__img-list img {
+   }
+   &__scroll {
+      margin-inline: calc(50% - 50vw);
+      overflow: hidden;
+   }
+   &__scroll-text {
+      animation: scroll-left 25s linear infinite both;
+      width: calc(1000rem - 2rem);
+      display: flex;
+      gap: 4rem;
+      @include sp {
+         width: calc(750rem - 2rem);
+      }
+   }
+}
+
+@keyframes scroll-left {
+   0% {
+      transform: translateX(0%);
+   }
+   100% {
+      transform: translateX(calc(-50% - 2rem));
    }
 }
