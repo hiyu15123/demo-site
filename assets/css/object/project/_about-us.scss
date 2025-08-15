@@ -6,7 +6,12 @@
       display: flex;
       justify-content: space-between;
       gap: 8rem;
-      margin-right: calc(50% - 50vw);
+      @include pc {
+         margin-right: calc(50% - 50vw);
+      }
+      @media (max-width: 1000px) {
+         gap: 4rem;
+      }
       @include sp {
          flex-direction: column;
          align-items: center;
@@ -15,7 +20,6 @@
    &__content {
       background-color: var(--color-wht);
       z-index: 1;
-      min-width: 56rem;
       width: 100%;
       @include pc {
          max-width: 560px;
@@ -44,7 +48,6 @@
       line-height: 1.5;
       padding: 3.2rem 0;
       min-width: 32rem;
-      font-size: 2.4rem;
       gap: 1.6rem;
       position: relative;
       @include pc {
@@ -70,7 +73,6 @@
          transition: var(--animation-second);
       }
       &:hover {
-         color: var(--color-pri);
          &::before {
             width: 100%;
             transform: scaleX(1);
@@ -93,6 +95,7 @@
       max-width: 80px;
       @include sp {
          display: block;
+         // height: 100%;
       }
       img {
          width: 100%;
@@ -102,6 +105,8 @@
    }
    &__title {
       line-height: 1.5;
+      font-size: 2.4rem;
+      color: var(--color-text);
       @include sp {
          font-size: 1.8rem;
       }
@@ -111,20 +116,33 @@
       flex-direction: column;
       justify-content: center;
       padding-right: calc(1.6rem + 4.8rem);
+      @include sp {
+      padding-right: 0;
+      padding-bottom: 4.8rem;
+      }
    }
    &__title-wrapper span {
       font-size: 1.6rem;
-      opacity: 0.6;
+      color: var(--color-pri);
       @include sp {
          font-size: 1.4rem;
          display: block;
       }
+      &+* {
+         margin-top: 1.6rem;
+         @include sp {
+            margin-top: 0.8rem;
+         }
+      }
+   }
+   &__desc {
+      @include sp {
+         font-size: 1.2rem;
+      }
    }
    &__circle {
       position: absolute;
-      top: 50%;
       right: 0;
-      transform: translateY(-50%);
       width: 4.8rem;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
@@ -133,6 +151,14 @@
       align-items: center;
       border: 1px solid var(--color-pri);
       transition: var(--animation-second);
+      @include pc {
+         transform: translateY(-50%);
+         top: 50%;
+      }
+      @include sp {
+         width: 4rem;
+         bottom: 1.6rem;
+      }
    }
    &__arrows {
       overflow: hidden;
@@ -171,7 +197,7 @@
    }
    &__img-list {
       width: 100%;
-      aspect-ratio: 6 / 7;
+      // aspect-ratio: 6 / 7;
       position: relative;
    }
    &__img-list img {

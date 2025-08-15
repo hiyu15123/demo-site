@@ -349,6 +349,7 @@ summary {
   --color-wht: #fff;
   --color-text: #333;
   --color-pri: #1e44f1;
+  --color-pri-light: #5671eb;
   --animation-second: .2s;
   --breakpoint-pc: 768px;
   --breakpoint-sp: 767px;
@@ -401,6 +402,7 @@ main {
   min-width: 12rem;
   gap: 4rem;
   background-color: #fff;
+  z-index: 999;
 }
 @media (max-width: 1000px) {
   .l-header__inner {
@@ -683,7 +685,16 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 8rem;
-  margin-right: calc(50% - 50vw);
+}
+@media (min-width: 768px) {
+  .p-about-us__inner {
+    margin-right: calc(50% - 50vw);
+  }
+}
+@media (max-width: 1000px) {
+  .p-about-us__inner {
+    gap: 4rem;
+  }
 }
 @media (max-width: 767px) {
   .p-about-us__inner {
@@ -694,7 +705,6 @@ main {
 .p-about-us__content {
   background-color: var(--color-wht);
   z-index: 1;
-  min-width: 56rem;
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -725,7 +735,6 @@ main {
   line-height: 1.5;
   padding: 3.2rem 0;
   min-width: 32rem;
-  font-size: 2.4rem;
   gap: 1.6rem;
   position: relative;
 }
@@ -754,9 +763,6 @@ main {
   background-size: contain;
   background-repeat: no-repeat;
   transition: var(--animation-second);
-}
-.p-about-us__list li a:hover {
-  color: var(--color-pri);
 }
 .p-about-us__list li a:hover::before {
   width: 100%;
@@ -790,6 +796,8 @@ main {
 }
 .p-about-us__title {
   line-height: 1.5;
+  font-size: 2.4rem;
+  color: var(--color-text);
 }
 @media (max-width: 767px) {
   .p-about-us__title {
@@ -802,9 +810,15 @@ main {
   justify-content: center;
   padding-right: 6.4rem;
 }
+@media (max-width: 767px) {
+  .p-about-us__title-wrapper {
+    padding-right: 0;
+    padding-bottom: 4.8rem;
+  }
+}
 .p-about-us__title-wrapper span {
   font-size: 1.6rem;
-  opacity: 0.6;
+  color: var(--color-pri);
 }
 @media (max-width: 767px) {
   .p-about-us__title-wrapper span {
@@ -812,11 +826,22 @@ main {
     display: block;
   }
 }
+.p-about-us__title-wrapper span + * {
+  margin-top: 1.6rem;
+}
+@media (max-width: 767px) {
+  .p-about-us__title-wrapper span + * {
+    margin-top: 0.8rem;
+  }
+}
+@media (max-width: 767px) {
+  .p-about-us__desc {
+    font-size: 1.2rem;
+  }
+}
 .p-about-us__circle {
   position: absolute;
-  top: 50%;
   right: 0;
-  transform: translateY(-50%);
   width: 4.8rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -825,6 +850,18 @@ main {
   align-items: center;
   border: 1px solid var(--color-pri);
   transition: var(--animation-second);
+}
+@media (min-width: 768px) {
+  .p-about-us__circle {
+    transform: translateY(-50%);
+    top: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .p-about-us__circle {
+    width: 4rem;
+    bottom: 1.6rem;
+  }
 }
 .p-about-us__arrows {
   overflow: hidden;
@@ -863,7 +900,6 @@ main {
 }
 .p-about-us__img-list {
   width: 100%;
-  aspect-ratio: 6/7;
   position: relative;
 }
 .u-mt16 {
