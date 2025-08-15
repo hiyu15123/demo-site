@@ -1,0 +1,179 @@
+@use "../../global/variable" as *;
+@use "../../global/mixin" as *;
+
+.p-about-us {
+   &__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 8rem;
+      margin-right: calc(50% - 50vw);
+      @include sp {
+         flex-direction: column;
+         align-items: center;
+      }
+   }
+   &__content {
+      background-color: var(--color-wht);
+      z-index: 1;
+      min-width: 56rem;
+      width: 100%;
+      @include pc {
+         max-width: 560px;
+      }
+      @include sp {
+         min-width: 100%;
+      }
+   }
+   &__head {
+      &+* {
+         margin-top: 2.4rem;
+      }
+   }
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0 3.2rem;
+      &+* {
+         margin-top: 4rem;
+      }
+   }
+   &__list li a {
+      font-weight: 500;
+      border-bottom: 1px solid #ddd;
+      display: block;
+      line-height: 1.5;
+      padding: 3.2rem 0;
+      min-width: 32rem;
+      font-size: 2.4rem;
+      gap: 1.6rem;
+      position: relative;
+      @include pc {
+         justify-content: space-between;
+      }
+      @include sp {
+         min-width: 100%;
+         display: flex;
+         gap: 1.6rem;
+         padding: 1.6rem 0;
+      }
+      &::before {
+         content: "";
+         position: absolute;
+         bottom: -1px;
+         left: 0;
+         background-color: var(--color-pri);
+         width: 3.2rem;
+         height: 1px;
+         background-position: center;
+         background-size: contain;
+         background-repeat: no-repeat;
+         transition: var(--animation-second);
+      }
+      &:hover {
+         color: var(--color-pri);
+         &::before {
+            width: 100%;
+            transform: scaleX(1);
+         }
+         & .p-about-us__circle {
+            background-color: var(--color-pri);
+         }
+         & .p-about-us__arrow.-before {
+            left: 0;
+         }
+         & .p-about-us__arrow.-after {
+            left: 100%;
+         }
+      }
+   }
+   &__thumb {
+      display: none;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      max-width: 80px;
+      @include sp {
+         display: block;
+      }
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+   &__title {
+      line-height: 1.5;
+      @include sp {
+         font-size: 1.8rem;
+      }
+   }
+   &__title-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: calc(1.6rem + 4.8rem);
+   }
+   &__title-wrapper span {
+      font-size: 1.6rem;
+      opacity: 0.6;
+      @include sp {
+         font-size: 1.4rem;
+         display: block;
+      }
+   }
+   &__circle {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 4.8rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--color-pri);
+      transition: var(--animation-second);
+   }
+   &__arrows {
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      width: 24px;
+      aspect-ratio: 1 / 1;
+   }
+   &__arrow {
+      position: absolute;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: var(--animation-second);
+   }
+   &__arrow.-before {
+      left: -100%;
+      z-index: 1;
+   }
+   &__arrow svg {
+      transition: var(--animation-second);
+   }
+   &__img-list li {
+      opacity: 0;
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 100%;
+      transition: var(--animation-second);
+      &.is-active {
+         opacity: 1;
+         z-index: 1;
+      }
+   }
+   &__img-list {
+      width: 100%;
+      aspect-ratio: 6 / 7;
+      position: relative;
+   }
+   &__img-list img {
+   }
+}

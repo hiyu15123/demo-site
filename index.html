@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
    <link rel="stylesheet" href="assets/css/style.css">
    <script src="assets/libs/swiper.js" defer></script>
@@ -17,8 +17,8 @@
          <h1 class="l-header__logo">デモサイト</h1>
          <div class="l-header__menu js-target-btn">
             <ul class="l-header__link-list">
-               <li><a href="#about" class="-about">私たちについて</a></li>
-               <li><a href="#business" class="-about">事業紹介</a></li>
+               <li><a href="#about-us" class="-about-us">私たちについて</a></li>
+               <li><a href="#business" class="-about-us">事業紹介</a></li>
                <li><a href="#member">社員紹介</a></li>
                <li><a href="#company">会社概要</a></li>
                <li><a href="#news">ニュース</a></li>
@@ -36,29 +36,166 @@
    </header>
    <main class="l-main">
       <section class="p-visual">
-         
       </section>
-      <section class="p-about">
+      <section class="p-about-us">
          <div class="l-inner">
-            <div class="p-about__content">
-               <h1 class="c-head01">
-                  <p>私たちについて</p>
-                  <span>ABOUT</span>
-               </h1>
-               <div class="p-about__list">
-                  <p class="p-about__item">ご挨拶</p>
-                  <p class="p-about__item">経営理念</p>
-                  <p class="p-about__item">会社情報</p>
-                  <p class="p-about__item">沿革</p>
-                  <p class="p-about__item">サステナビリティ</p>
-                  <p class="p-about__item">関係会社</p>
+            <h1 class="c-head01 p-about-us__head">
+               <p>私たちについて</p>
+               <span>ABOUT US</span>
+            </h1>
+            <div class="p-about-us__inner">
+               <div class="p-about-us__content">
+                  <ul class="p-about-us__list js-about-trigger">
+                     <li>
+                        <a href="#">
+                           <p class="p-about-us__thumb">
+                              <img src="/assets/img/img_about-us01.jpg" alt="">
+                           </p>
+                           <div class="p-about-us__title-wrapper">
+                              <p class="p-about-us__title">会社情報</p>
+                              <span>COMPANY INFORMATION</span>
+                           </div>
+                           <span class="p-about-us__circle">
+                              <span class="p-about-us__arrows">
+                                    <span class="p-about-us__arrow -before">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                                 <span class="p-about-us__arrow -after">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e44f1" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                              </span>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <p class="p-about-us__thumb">
+                              <img src="/assets/img/img_about-us02.jpg" alt="">
+                           </p>
+                           <div class="p-about-us__title-wrapper">
+                              <p class="p-about-us__title">代表メッセージ</p>
+                              <span>MESSAGE</span>
+                           </div>
+                           <span class="p-about-us__circle">
+                              <span class="p-about-us__arrows">
+                                    <span class="p-about-us__arrow -before">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                                 <span class="p-about-us__arrow -after">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e44f1" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                              </span>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <p class="p-about-us__thumb">
+                              <img src="/assets/img/img_about-us03.jpg" alt="">
+                           </p>
+                           <div class="p-about-us__title-wrapper">
+                              <p class="p-about-us__title">経営理念・ミッション</p>
+                              <span>MISSION</span>
+                           </div>
+                           <span class="p-about-us__circle">
+                              <span class="p-about-us__arrows">
+                                    <span class="p-about-us__arrow -before">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                                 <span class="p-about-us__arrow -after">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e44f1" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                              </span>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <p class="p-about-us__thumb">
+                              <img src="/assets/img/img_about-us04.jpg" alt="">
+                           </p>
+                           <div class="p-about-us__title-wrapper">
+                              <p class="p-about-us__title">沿革</p>
+                              <span>HISTORY</span>
+                           </div>
+                           <span class="p-about-us__circle">
+                              <span class="p-about-us__arrows">
+                                    <span class="p-about-us__arrow -before">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                                 <span class="p-about-us__arrow -after">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e44f1" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                              </span>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <p class="p-about-us__thumb">
+                              <img src="/assets/img/img_about-us05.jpg" alt="">
+                           </p>
+                           <div class="p-about-us__title-wrapper">
+                              <p class="p-about-us__title">サステナビリティ</p>
+                              <span>SUSTAINABILITY</span>
+                           </div>
+                           <span class="p-about-us__circle">
+                              <span class="p-about-us__arrows">
+                                    <span class="p-about-us__arrow -before">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                                 <span class="p-about-us__arrow -after">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e44f1" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                              </span>
+                           </span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <p class="p-about-us__thumb">
+                              <img src="/assets/img/img_about-us06.jpg" alt="">
+                           </p>
+                           <div class="p-about-us__title-wrapper">
+                              <p class="p-about-us__title">事業内容</p>
+                              <span>SERVICE</span>
+                           </div>
+                           <span class="p-about-us__circle">
+                              <span class="p-about-us__arrows">
+                                    <span class="p-about-us__arrow -before">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                                 <span class="p-about-us__arrow -after">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e44f1" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M9 18l6-6-6-6"/></svg>
+                                 </span>
+                              </span>
+                           </span>
+                        </a>
+                     </li>
+                  </ul>
                </div>
+               <ul class="p-about-us__img-list js-about-target">
+                  <li class="is-active">
+                     <img src="/assets/img/img_about-us01.jpg" alt="">
+                  </li>
+                  <li>
+                     <img src="/assets/img/img_about-us02.jpg" alt="">
+                  </li>
+                  <li>
+                     <img src="/assets/img/img_about-us03.jpg" alt="">
+                  </li>
+                  <li>
+                     <img src="/assets/img/img_about-us04.jpg" alt="">
+                  </li>
+                  <li>
+                     <img src="/assets/img/img_about-us05.jpg" alt="">
+                  </li>
+                  <li>
+                     <img src="/assets/img/img_about-us06.jpg" alt="">
+                  </li>
+               </ul>
             </div>
-            <p class="p-about__img">
-               <img src="/assets/img/" alt="">
-            </p>
          </div>
-         
       </section>
    </main>
    <footer class="l-footer">

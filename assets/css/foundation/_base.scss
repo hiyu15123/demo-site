@@ -24,9 +24,10 @@ img {
 }
 
 main {
-   padding-top: 60px;
+   padding-top: 78px;
    padding-bottom: 16rem;
    @include sp {
       padding-bottom: 12rem;
+      padding-top: 88px;
    }
 }
