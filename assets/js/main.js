@@ -18,7 +18,35 @@ function aboutHoverTrigger() {
    }
 }
 
+function homeStaffSwiper() {
+   const staffSwiper = new Swiper('.js-staff-swiper', {
+      loop: true,
+      spaceBetween: 32,
+      slidesPerView: 'auto',
+
+      pagination: {
+         el: '.swiper-pagination',
+         type: 'fraction',
+         renderFraction: function (currentClass, totalClass) {
+            return `<span class="${currentClass}"></span>
+            <span class="p-staff__current-icon"></span>
+            <span class="${totalClass}"></span>`
+         }
+      },
+
+      navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev',
+      },
+
+      scrollbar: {
+         el: '.swiper-scrollbar',
+      },
+   });
+}
+
 window.addEventListener('DOMContentLoaded', function() {
    headerBtn();
-   aboutHoverTrigger()
+   aboutHoverTrigger();
+   homeStaffSwiper();
 });

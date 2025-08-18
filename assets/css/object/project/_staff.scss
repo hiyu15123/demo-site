@@ -1,0 +1,132 @@
+@use "../../global/variable" as *;
+@use "../../global/mixin" as *;
+
+.p-staff {
+   &__inner {
+      display: flex;
+      justify-content: space-between;
+      @include pc {
+         margin-right: calc(50% - 50vw);
+         gap: 4rem;
+      }
+      @include sp {
+         flex-direction: column;
+      }
+   }
+   &__btn {
+      @include pc {
+         margin-left: 0;
+      }
+      @include sp {
+         order: 1;
+         margin-top: 2.4rem;
+      }
+   }
+   &__slide {
+      width: 100%;
+      @include pc {
+         max-width: 600px;
+      }
+   }
+   &__content {
+      @include pc {
+         min-width: 320px;
+      }
+      width: 100%;
+      @include sp {
+         display: contents;
+      }
+      &+* {
+         @include sp {
+            margin-top: 3.2rem;
+         }
+      }
+   }
+   &__img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      &+* {
+         margin-top: 1.2rem;
+      }
+   }
+   &__group {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+   }
+   &__name {
+      font-weight: bold;
+      font-size: 2.4rem;
+      padding-left: 1.6rem;
+      position: relative;
+      line-height: 1.5;
+      &::before {
+         content: '';
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         left: 0;
+         width: 0.6rem;
+         height: 0.6rem;
+         background-color: var(--color-pri);
+      }
+   }
+   &__job {
+      line-height: 1.5;
+      font-weight: 500;
+   }
+   &__swiper {
+      width: 100%;
+      @include pc {
+         min-width: calc(100% - 320px - 4rem);
+      }
+   }
+   &__swiper-wrapper {
+      &+* {
+         margin-top: 3.2rem;
+         @include sp {
+            margin-top: 1.6rem;
+         }
+      }
+   }
+   &__prev, 
+   &__next {
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+      margin-top: auto;
+      &:after {
+         display: none;
+      }
+   }
+   &__arrows {
+      display: flex;
+      gap: 1.6rem;
+      @include sp {
+         gap: 1.2rem;
+      }
+   }
+   &__pagination {
+      position: static;
+      display: flex;
+      width: auto;
+      align-items: center;
+      gap: 1rem;
+   }
+   &__pagination span {
+      font-weight: bold;
+   }
+   &__control {
+      display: flex;
+      gap: 4rem;
+      @include sp {
+         gap: 3.2rem;
+      }
+   }
+   &__current-icon {
+      width: 4rem;
+      height: 1px;
+      background-color: var(--color-text);
+   }
+}

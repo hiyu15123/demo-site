@@ -3,6 +3,7 @@
 
 .c-icon {
    width: 4.8rem;
+   min-width: 4.8rem;
    aspect-ratio: 1 / 1;
    border-radius: 50%;
    display: flex;
@@ -26,12 +27,44 @@
          left: 100%;
       }
    }
+   &.-prev {
+      &:hover {
+         & .c-icon__arrow.-before {
+            left: 100%;
+         }
+         & .c-icon__arrow.-after {
+            left: 0;
+         }
+      }
+      & .c-icon__arrow.-before {
+         left: 0;
+      }
+      & .c-icon__arrow.-after {
+         left: 100%;
+      }
+   }
    &.-wht {
       border: 1px solid var(--color-wht);
       &:hover {
          background-color: var(--color-wht);
          & .c-icon__arrow {
             stroke: var(--color-pri);
+         }
+      }
+   }
+   &.-btn {
+      background-color: var(--color-wht);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 2.8rem;
+      width: 3.2rem;
+      min-width: 3.2rem;
+      &:hover {
+         background-color: var(--color-pri);
+         color: var(--color-wht);
+         & .c-icon__arrow {
+            stroke: var(--color-wht);
          }
       }
    }
