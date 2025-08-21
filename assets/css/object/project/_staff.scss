@@ -33,6 +33,11 @@
          }
       }
    }
+   &__slide a {
+      &:hover {
+         color: var(--color-pri);
+      }
+   }
    &__content {
       @include pc {
          min-width: 320px;

@@ -1,0 +1,13 @@
+.c-arrow {
+   position: relative;
+   padding-left: 2.8rem;
+   &__icon {
+      position: absolute;
+      inset: 50% auto auto 0;
+      transform: translateY(-50%);
+   }
+   &__icon svg {
+      width: 2.4rem;
+      height: 2.4rem;
+   }
+}
