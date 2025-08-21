@@ -10,11 +10,17 @@
       background-color: var(--color-pri-light);
       border-radius: 0.4rem;
       padding: 1.6em;
+      @include sp {
+         grid-template-columns: 1fr;
+      }
    }
    &__item {
       background-color: var(--color-wht);
       border-radius: 0.4rem;
-      padding: 2.4rem;
+      padding: 4rem 1.6rem;
+      @include sp {
+         padding: 1.6rem;
+      }
    }
    &__title {
       font-weight: 500;
@@ -23,6 +29,9 @@
       text-align: center;
       &+* {
          margin-top: 1.6rem;
+         @include sp {
+            margin-top: 0.8rem;
+         }
       }
    }
    &__value {
@@ -35,6 +44,6 @@
       font-weight: bold;
       color: var(--color-pri);
       font-size: 6rem;
-      line-height: 1.5;
+      line-height: 1;
    }
 }
