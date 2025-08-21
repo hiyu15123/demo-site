@@ -5,17 +5,17 @@ function headerBtn() {
    });
 }
 
-function aboutHoverTrigger() {
-   const trigger = document.querySelectorAll(".js-about-trigger li a");
-   const target = document.querySelectorAll(".js-about-target li");
-   for (let i = 0; i < trigger.length; i++) {
-      trigger[i].addEventListener("mouseover", function() {
-         for (let j = 0; j < target.length; j++) {
-            target[j].classList.remove("is-active");
-         }
-         target[i].classList.add("is-active");
-      })
-   }
+function aboutUsHover() {
+   const aboutUsHoverTrigger = document.querySelectorAll(".js-about-trigger li a");
+   const aboutUsHoverTarget = document.querySelectorAll(".js-about-target li");
+   aboutUsHoverTrigger.forEach((item, i) => {
+      item.addEventListener('mouseover', () => {
+         aboutUsHoverTrigger.forEach(i => i.classList.remove('is-active'));
+         aboutUsHoverTarget.forEach(t => t.classList.remove('is-active'));
+         item.classList.add('is-active');
+         aboutUsHoverTarget[i].classList.add('is-active');
+      });
+   });
 }
 
 function homeStaffSwiper() {
@@ -40,23 +40,45 @@ function homeStaffSwiper() {
 }
 
 function serviceTab() {
-   const trigger = document.querySelectorAll(".js-service-trigger li");
-   const target = document.querySelectorAll(".js-service-target > *");
-   for (let i = 0; i < trigger.length; i++) {
-      trigger[i].addEventListener("click", function() {
-         for (let j = 0; j < trigger.length; j++) {
-            trigger[j].classList.remove("is-active");
-            target[j].classList.remove("is-active");
-         }
-         trigger[i].classList.add("is-active");
-         target[i].classList.add("is-active");
+   const serviceTabTrigger = document.querySelectorAll(".js-service-trigger li");
+   const serviceTabTarget = document.querySelectorAll(".js-service-target > *");
+
+   serviceTabTrigger.forEach((tab, i) => {
+      tab.addEventListener('click', () => {
+         serviceTabTrigger.forEach(t => t.classList.remove('is-active'));
+         serviceTabTarget.forEach(c => c.classList.remove('is-active'));
+         tab.classList.add('is-active');
+         serviceTabTarget[i].classList.add('is-active');
       });
-   };
+   });
+}
+
+function dataCountUp() {
+   const countUpTrigger = document.querySelector(".js-data-trigger");
+   const countUpTargets = document.querySelectorAll(".js-data-target");
+   countUpTargets.forEach((target) => {
+      const from = Number(target.dataset.from);
+      const to = Number(target.dataset.to);
+      const number = { count: from };
+      gsap.to(number, {
+         count: to,
+         duration: 1,
+         ease: 'none',
+         scrollTrigger: {
+            trigger: countUpTrigger,
+            start: "top 60%",
+         },
+         onUpdate: () => {
+            target.textContent = Math.floor(number.count).toLocaleString();
+         },
+      });
+   });
 }
 
 window.addEventListener('DOMContentLoaded', function() {
    headerBtn();
-   aboutHoverTrigger();
+   aboutUsHover();
    homeStaffSwiper();
    serviceTab();
+   dataCountUp();
 });

@@ -1397,6 +1397,44 @@ main {
   background-color: var(--color-text);
 }
 
+.p-data {
+  height: 100vh;
+}
+.p-data__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  background-color: var(--color-pri-light);
+  border-radius: 0.4rem;
+  padding: 1.6em;
+}
+.p-data__item {
+  background-color: var(--color-wht);
+  border-radius: 0.4rem;
+  padding: 2.4rem;
+}
+.p-data__title {
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.p-data__title + * {
+  margin-top: 1.6rem;
+}
+.p-data__value {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: baseline;
+}
+.p-data__number {
+  font-weight: bold;
+  color: var(--color-pri);
+  font-size: 6rem;
+  line-height: 1.5;
+}
+
 .u-mt16 {
   margin-top: 1.6rem;
 }

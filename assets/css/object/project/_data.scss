@@ -1,0 +1,40 @@
+@use "../../global/variable" as *;
+@use "../../global/mixin" as *;
+
+.p-data {
+   height: 100vh;
+   &__inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+      background-color: var(--color-pri-light);
+      border-radius: 0.4rem;
+      padding: 1.6em;
+   }
+   &__item {
+      background-color: var(--color-wht);
+      border-radius: 0.4rem;
+      padding: 2.4rem;
+   }
+   &__title {
+      font-weight: 500;
+      line-height: 1.5;
+      font-size: 1.8rem;
+      text-align: center;
+      &+* {
+         margin-top: 1.6rem;
+      }
+   }
+   &__value {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      align-items: baseline;
+   }
+   &__number {
+      font-weight: bold;
+      color: var(--color-pri);
+      font-size: 6rem;
+      line-height: 1.5;
+   }
+}
