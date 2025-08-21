@@ -2,7 +2,6 @@
 @use "../../global/mixin" as *;
 
 .p-data {
-   height: 100vh;
    &__inner {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
