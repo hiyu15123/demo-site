@@ -27,6 +27,11 @@
       @include pc {
          max-width: 600px;
       }
+      &:hover {
+         & img {
+            transform: scale(1.05);
+         }
+      }
    }
    &__content {
       @include pc {
@@ -45,9 +50,13 @@
    &__img {
       width: 100%;
       aspect-ratio: 16 / 9;
+      overflow: hidden;
       &+* {
          margin-top: 1.2rem;
       }
+   }
+   &__img img {
+      transition: var(--animation-second);
    }
    &__group {
       display: flex;
@@ -57,19 +66,7 @@
    &__name {
       font-weight: bold;
       font-size: 2.4rem;
-      padding-left: 1.6rem;
-      position: relative;
       line-height: 1.5;
-      &::before {
-         content: '';
-         position: absolute;
-         top: 50%;
-         transform: translateY(-50%);
-         left: 0;
-         width: 0.6rem;
-         height: 0.6rem;
-         background-color: var(--color-pri);
-      }
    }
    &__job {
       line-height: 1.5;

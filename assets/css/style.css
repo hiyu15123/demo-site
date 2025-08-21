@@ -633,27 +633,28 @@ main {
   max-width: 100%;
 }
 
-.c-head01 p, .c-head01 span {
+.c-head01__main, .c-head01__sub {
   font-size: 4.8rem;
   line-height: 1;
   font-weight: bold;
+  display: block;
 }
 @media (max-width: 767px) {
-  .c-head01 p, .c-head01 span {
+  .c-head01__main, .c-head01__sub {
     font-size: 3.2rem;
   }
 }
-.c-head01 p + * {
+.c-head01__main + * {
   margin-top: 1.6rem;
 }
-.c-head01 span {
+.c-head01__sub {
   font-size: 2rem;
   color: var(--color-pri);
   display: inline-block;
   font-weight: 500;
 }
 @media (max-width: 767px) {
-  .c-head01 span {
+  .c-head01__sub {
     font-size: 1.8rem;
   }
 }
@@ -782,6 +783,21 @@ main {
 }
 .c-icon__arrow svg {
   transition: var(--animation-second);
+}
+
+.c-bullet {
+  padding-left: 1.6rem;
+  position: relative;
+}
+.c-bullet::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: var(--color-pri);
 }
 
 .p-about-us__inner {
@@ -1008,6 +1024,14 @@ main {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.p-service__inner + * {
+  margin-top: 8rem;
+}
+@media (max-width: 767px) {
+  .p-service__inner + * {
+    margin-top: 4rem;
+  }
+}
 .p-service__item {
   position: relative;
   width: 100%;
@@ -1054,14 +1078,14 @@ main {
   width: 100%;
   height: 100%;
 }
-.p-service__img {
+.p-service__bgi {
   width: 100%;
   aspect-ratio: 1/1;
   position: absolute;
   inset: 0 auto auto 0;
   z-index: -2;
 }
-.p-service__img img {
+.p-service__bgi img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1117,6 +1141,104 @@ main {
     bottom: 2.4rem;
   }
 }
+.p-service__tab-wrapper ~ * {
+  margin-top: 4rem;
+}
+@media (max-width: 767px) {
+  .p-service__tab-wrapper ~ * {
+    margin-top: 2.4rem;
+  }
+}
+.p-service__tab-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 0.4rem;
+  background-color: #ddd;
+  padding: 0.8rem;
+  margin-inline: auto;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .p-service__tab-list {
+    grid-template-columns: 1fr;
+  }
+}
+.p-service__tab-list::before {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  z-index: -1;
+}
+.p-service__tab-list li {
+  text-align: center;
+  padding: 1.6rem 3.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  line-height: 1.5;
+  transition: var(--animation-second);
+}
+.p-service__tab-list li.is-active, .p-service__tab-list li:hover {
+  background-color: var(--color-pri);
+  color: var(--color-wht);
+}
+.p-service__tab-item {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem 0.8rem;
+}
+@media (max-width: 767px) {
+  .p-service__tab-item {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.p-service__tab-item.is-active {
+  display: grid;
+}
+.p-service__card {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.p-service__img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+.p-service__img + * {
+  margin-top: 2rem;
+}
+@media (max-width: 767px) {
+  .p-service__img + * {
+    margin-top: 1.8rem;
+  }
+}
+.p-service__img img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+.p-service__link {
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 1.8rem;
+  flex-grow: 1;
+}
+.p-service__link::before {
+  top: 1.2rem;
+}
+.p-service__link + * {
+  margin-top: 1.6rem;
+}
 
 .p-staff__inner {
   display: flex;
@@ -1152,6 +1274,9 @@ main {
     max-width: 600px;
   }
 }
+.p-staff__slide:hover img {
+  transform: scale(1.05);
+}
 .p-staff__content {
   width: 100%;
 }
@@ -1173,9 +1298,13 @@ main {
 .p-staff__img {
   width: 100%;
   aspect-ratio: 16/9;
+  overflow: hidden;
 }
 .p-staff__img + * {
   margin-top: 1.2rem;
+}
+.p-staff__img img {
+  transition: var(--animation-second);
 }
 .p-staff__group {
   display: flex;
@@ -1185,19 +1314,7 @@ main {
 .p-staff__name {
   font-weight: bold;
   font-size: 2.4rem;
-  padding-left: 1.6rem;
-  position: relative;
   line-height: 1.5;
-}
-.p-staff__name::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  width: 0.6rem;
-  height: 0.6rem;
-  background-color: var(--color-pri);
 }
 .p-staff__job {
   line-height: 1.5;

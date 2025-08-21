@@ -10,7 +10,7 @@ function aboutHoverTrigger() {
    const target = document.querySelectorAll(".js-about-target li");
    for (let i = 0; i < trigger.length; i++) {
       trigger[i].addEventListener("mouseover", function() {
-         for (let j = 0;j < target.length; j++) {
+         for (let j = 0; j < target.length; j++) {
             target[j].classList.remove("is-active");
          }
          target[i].classList.add("is-active");
@@ -23,7 +23,6 @@ function homeStaffSwiper() {
       loop: true,
       spaceBetween: 32,
       slidesPerView: 'auto',
-
       pagination: {
          el: '.swiper-pagination',
          type: 'fraction',
@@ -33,20 +32,31 @@ function homeStaffSwiper() {
             <span class="${totalClass}"></span>`
          }
       },
-
       navigation: {
          nextEl: '.swiper-button-next',
          prevEl: '.swiper-button-prev',
       },
-
-      scrollbar: {
-         el: '.swiper-scrollbar',
-      },
    });
+}
+
+function serviceTab() {
+   const trigger = document.querySelectorAll(".js-service-trigger li");
+   const target = document.querySelectorAll(".js-service-target > *");
+   for (let i = 0; i < trigger.length; i++) {
+      trigger[i].addEventListener("click", function() {
+         for (let j = 0; j < trigger.length; j++) {
+            trigger[j].classList.remove("is-active");
+            target[j].classList.remove("is-active");
+         }
+         trigger[i].classList.add("is-active");
+         target[i].classList.add("is-active");
+      });
+   };
 }
 
 window.addEventListener('DOMContentLoaded', function() {
    headerBtn();
    aboutHoverTrigger();
    homeStaffSwiper();
+   serviceTab();
 });

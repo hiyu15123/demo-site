@@ -1,0 +1,14 @@
+.c-bullet {
+   padding-left: 1.6rem;
+   position: relative;
+   &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 0.6rem;
+      height: 0.6rem;
+      background-color: var(--color-pri);
+   }
+}
