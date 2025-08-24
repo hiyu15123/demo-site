@@ -14,6 +14,7 @@
       gap: 4rem;
       background-color: #fff;
       z-index: 999;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.02);
       @media (max-width: 1000px) {
          gap: 2.4rem;
       }
@@ -50,16 +51,18 @@
       @include sp {
          display: none;
          background-color: #fff;
+         overflow-y: scroll;
       }
       &.is-active {
          @include sp {
             display: block;
             position: absolute;
             inset: 0 auto auto 0;
-            top: 98px;
+            top: 78px;
             width: 100%;
-            height: calc(100vh - 98px);
-            padding: 2rem;
+            height: calc(100vh - 78px);
+            padding: 1.6rem;
+            padding-bottom: 7rem;
             z-index: 1000;
          }
       }
@@ -75,11 +78,11 @@
       @include sp {
          flex-direction: column;
          align-items: flex-start;
-         gap: 1.6rem;
+         gap: 0;
       }
       &+* {
          @include sp {
-         margin-top: 3.2rem;
+            margin-top: 3.2rem;
          }
       }
    }
@@ -88,7 +91,6 @@
          font-size: 1.6rem;
          text-align: center;
          width: 100%;
-         
       }
    }
    &__link-list li a {
@@ -102,7 +104,68 @@
       }
       &:hover {
          color: var(--color-pri);
-         border-bottom: 1px solid var(--color-pri);
+      }
+   }
+   &__link {
+      display: flex;
+      align-items: center;
+      position: relative;
+      @include sp {
+         border-bottom: 1px solid #ddd;
+         padding-block: 1.6rem;
+      }
+      &:hover + .l-header__drop {
+         @include pc {
+            visibility: visible;
+            opacity: 1;
+         }
+      }
+      @include pc {
+         &::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: calc(100% + 1.6rem + 1rem);
+         }
+      }
+      &.is-active {
+         & .l-header__plus {
+         }
+      }
+   }
+   &__plus {
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: 1.6rem;
+      aspect-ratio: 1 / 1;
+      @include sp {
+         display: block;
+         &::before,
+         &::after {
+            content: "";
+            position: absolute;
+            transition: var(--animation-second);
+         }
+         &::before {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 1.6rem;
+            background-color: var(--color-pri);
+         }
+         &::after {
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: 1.6rem;
+            height: 2px;
+            background-color: var(--color-pri);
+         }
       }
    }
    &__btn {
@@ -127,7 +190,9 @@
       }
       @include sp {
          font-size: 1.6rem;
-         padding: 0.8rem 3.2rem;
+         padding: 1.2rem 3.2rem;
+         min-width: 80vw;
+         text-align: center;
       }
       &:hover {
          background-color: var(--color-wht);
@@ -135,7 +200,7 @@
       }
    }
    &__trigger {
-      width: 60px;
+      width: 50px;
       aspect-ratio: 1 / 1;
       @include pc {
          display: none;
@@ -154,7 +219,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 30px;
+      width: 25px;
       height: 2px;
       background-color: var(--color-wht);
       transition: var(--animation-second);
@@ -188,6 +253,135 @@
       &::after {
          transform: rotate(-45deg);
          bottom: 0;
+      }
+   }
+   &__drop {
+      position: absolute;
+      inset: 100% auto auto 0;
+      background-color: var(--color-wht);
+      width: 100%;
+      transition: var(--animation-second);
+      @include pc {
+         opacity: 0;
+         visibility: hidden;
+         border-top: 1px solid #ddd;
+      }
+      @include sp {
+         display: none;
+      }
+      &:hover {
+         @include pc {
+            visibility: visible;
+            opacity: 1;
+         }
+      }
+      @include sp {
+         position: static;
+         & .l-header__drop-inner {
+            padding: 0;
+         }
+         & .l-header__head {
+            display: none;
+         }
+         & .l-header__drop-list {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0;
+         }
+         & .l-header__drop-link {
+            padding: 1.4rem 0 1.4rem 2.4rem;
+            text-align-last: left;
+            font-size: 1.4rem;
+         }
+         & .l-header__drop-icon.c-arrow__icon {
+            inset: 0;
+            top: 48%;
+         }
+      }
+      &.is-active {
+         @include sp {
+            display: block;
+         }
+      }
+   }
+   &__drop-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      gap: 2.4rem;
+   }
+   &__drop-inner {
+      max-width: 120rem;
+      padding: 4rem 1.6rem;
+      margin-inline: auto;
+      display: flex;
+      gap: 4rem;
+   }
+   &__head.c-head01 {
+      min-width: 28rem;
+      &+* {
+         margin-top: 0;
+      }
+   }
+   &__head-main.c-head01__main {
+      font-size: 2.4rem;
+      color: var(--color-pri);
+      font-weight: 500;
+   }
+   &__head-sub.c-head01__sub {
+      font-size: 2.4rem;
+   }
+   &__drop-link {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      padding-bottom: 1.6rem;
+      position: relative;
+      &::before {
+         content: '';
+         position: absolute;
+         bottom: -1px;
+         left: 0;
+         width: 3.2rem;
+         height: 1px;
+         background-color: var(--color-pri);
+         transition: var(--animation-second);
+      }
+      &:hover {
+         &::before {
+            width: 100%;
+         }
+      }
+   }
+   &__drop-icon.c-arrow__icon {
+      top: 1.4rem;
+   }
+   &__drop-icon.c-arrow__icon svg {
+      width: 1.8rem;
+      height: 1.8rem;
+   }
+   &__arrow {
+      @include sp {
+         display: none;
+      }
+   }
+   &__arrow svg {
+      display: block;
+   }
+   &__overlay {
+      position: fixed;
+      top: 78px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.6);
+      z-index: -99;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--animation-second);
+      &.is-open {
+         @include pc {
+            opacity: 1;
+            visibility: visible;
+         }
       }
    }
 }

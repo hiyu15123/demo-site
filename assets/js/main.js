@@ -5,6 +5,37 @@ function headerBtn() {
    });
 }
 
+function headerBtnDrop() {
+   const dropTriggers = document.querySelectorAll(".js-header-drop-trigger");
+   const dropTargets = document.querySelectorAll(".js-header-drop-target");
+
+   dropTriggers.forEach((trigger, i) => {
+      trigger.addEventListener("click", () => {
+         // dropTriggers.forEach(t => t.classList.remove("is-active"));
+         // dropTargets.forEach(c => c.classList.remove("is-active"));
+         // trigger.classList.add("is-active");
+         // dropTargets[i].classList.add("is-active");
+         trigger.classList.toggle("is-active");
+         dropTargets[i].classList.toggle("is-active");
+      });
+   });
+}
+
+function headerMenuOverlay() {
+   const overlayTrigger = document.querySelectorAll(".js-header-overlay-trigger");
+   const overlayTarget = document.querySelector(".js-header-overlay-target");
+   overlayTrigger.forEach((t) => {
+      t.addEventListener("mouseover", () => {
+         overlayTarget.classList.add("is-open");
+      });
+      t.addEventListener("mouseleave", () => {
+         overlayTarget.classList.remove("is-open");
+      });
+   });
+}
+
+
+
 function aboutUsHover() {
    const aboutUsHoverTrigger = document.querySelectorAll(".js-about-trigger li a");
    const aboutUsHoverTarget = document.querySelectorAll(".js-about-target li");
@@ -77,8 +108,10 @@ function dataCountUp() {
 
 window.addEventListener('DOMContentLoaded', function() {
    headerBtn();
+   headerBtnDrop();
    aboutUsHover();
    homeStaffSwiper();
    serviceTab();
    dataCountUp();
+   headerMenuOverlay();
 });

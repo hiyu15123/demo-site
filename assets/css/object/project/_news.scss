@@ -21,7 +21,7 @@
    }
    &__content {
       @include pc {
-         min-width: 35rem;
+         min-width: 32rem;
       }
       @include sp {
          display: contents;
@@ -34,7 +34,7 @@
    }
    &__list {
       @include pc {
-         min-width: calc(100% - 40rem - 4rem);
+         min-width: calc(100% - 32rem - 4rem);
       }
    }
    &__link {
