@@ -17,7 +17,9 @@
    <header class="l-header">
       <div class="l-header__inner">
          <h1 class="l-header__logo">
-            <img src="/assets/img/img_logo.svg" alt="ロゴ">
+            <a href="#">
+               <img src="/assets/img/img_logo.svg" alt="ロゴ">
+            </a>
          </h1>
          <div class="l-header__menu js-target-btn">
             <ul class="l-header__link-list">
@@ -131,6 +133,34 @@
    </header>
    <main class="l-main">
       <section class="p-visual l-section">
+         <div class="swiper js-visual-swiper p-visual__swiper">
+            <div class="swiper-wrapper p-visual__swiper-wrapper">
+               <div class="swiper-slide p-visual__slide">
+                  <p class="p-visual__img">
+                     <img src="/assets/img/img_visual01.jpg" alt="">
+                  </p>
+               </div>
+               <div class="swiper-slide p-visual__slide">
+                  <p class="p-visual__img">
+                     <img src="/assets/img/img_visual02.jpg" alt="">
+                  </p>
+               </div>
+               <div class="swiper-slide p-visual__slide">
+                  <p class="p-visual__img">
+                     <img src="/assets/img/img_visual03.jpg" alt="">
+                  </p>
+               </div>
+               <div class="swiper-slide p-visual__slide">
+                  <p class="p-visual__img">
+                     <img src="/assets/img/img_visual04.jpg" alt="">
+                  </p>
+               </div>
+            </div>
+            <div class="swiper-pagination p-visual__pagination"></div>
+         </div>
+         <p class="p-visual__title-wrapper">
+            <span class="p-visual__title">品質と信頼、<br>その先の<br class="u-hidden-pc"><span>ソリューション</span></span>
+         </p>
       </section>
       <section class="p-about-us l-section">
          <div class="l-inner">
@@ -637,7 +667,7 @@
                      <span class="c-head01__main">ニュース</span>
                      <span class="c-head01__sub">NEWS</span>
                   </h2>
-                  <p class="p-news__desc">当社の最新ニュースリリースおよび<br>各種お知らせを掲載しております。</p>
+                  <p class="p-news__desc">当社の最新ニュースリリースおよび各種お知らせを掲載しております。</p>
                   <a href="#" class="c-btn p-staff__btn">
                      <span>詳しく見る</span>
                      <span class="c-icon -btn">
@@ -655,8 +685,10 @@
                <ul class="p-news__list">
                   <li>
                      <a href="#" class="p-news__link">
-                        <time datetime="2025-08-10" class="p-news__date">2025.08.10</time>
-                        <p class="p-news__category">設備導入</p>
+                        <div class="p-news__detail">
+                           <time datetime="2025-08-10" class="p-news__date">2025.08.10</time>
+                           <span class="p-news__category">設備導入</span>
+                        </div>
                         <p class="p-news__title">新しい自動搬送システムを導入しました。</p>
                         <span class="c-icon p-news__icon">
                            <span class="c-icon__arrows">
@@ -672,8 +704,10 @@
                   </li>
                   <li>
                      <a href="#" class="p-news__link">
-                        <time datetime="2025-07-25" class="p-news__date">2025.07.25</time>
-                        <p class="p-news__category">お知らせ</p>
+                        <div class="p-news__detail">
+                           <time datetime="2025-07-25" class="p-news__date">2025.07.25</time>
+                           <span class="p-news__category">お知らせ</span>
+                        </div>
                         <p class="p-news__title">夏季休業のお知らせ（8月13日～16日）。</p>
                         <span class="c-icon p-news__icon">
                            <span class="c-icon__arrows">
@@ -689,8 +723,10 @@
                   </li>
                   <li>
                      <a href="#" class="p-news__link">
-                        <time datetime="2025-07-01" class="p-news__date">2025.07.01</time>
-                        <p class="p-news__category">製品情報</p>
+                        <div class="p-news__detail">
+                           <time datetime="2025-07-01" class="p-news__date">2025.07.01</time>
+                           <span class="p-news__category">製品情報</span>
+                        </div>
                         <p class="p-news__title">環境対応型の新ライン稼働を開始しました。</p>
                         <span class="c-icon p-news__icon">
                            <span class="c-icon__arrows">
@@ -706,8 +742,10 @@
                   </li>
                   <li>
                      <a href="#" class="p-news__link">
-                        <time datetime="2025-06-15" class="p-news__date">2025.06.15</time>
-                        <p class="p-news__category">認証・表彰</p>
+                        <div class="p-news__detail">
+                           <time datetime="2025-06-15" class="p-news__date">2025.06.15</time>
+                           <span class="p-news__category">認証・表彰</span>
+                        </div>
                         <p class="p-news__title">品質マネジメントシステム ISO9001 の更新認証を取得しました。</p>
                         <span class="c-icon p-news__icon">
                            <span class="c-icon__arrows">
@@ -723,8 +761,10 @@
                   </li>
                   <li>
                      <a href="#" class="p-news__link">
-                        <time datetime="2025-08-10" class="p-news__date">2025.06.01</time>
-                        <p class="p-news__category">お知らせ</p>
+                        <div class="p-news__detail">
+                           <time datetime="2025-08-10" class="p-news__date">2025.06.01</time>
+                           <span class="p-news__category">お知らせ</span>
+                        </div>
                         <p class="p-news__title">ホームページをリニューアルしました。</p>
                         <span class="c-icon p-news__icon">
                            <span class="c-icon__arrows">
@@ -747,6 +787,9 @@
    <footer class="l-footer">
       <div class="l-footer__contact">
          <a href="#" class="l-footer__contact-link">
+            <p class="l-footer__contact-bgi">
+               <img src="/assets/img/img_footer_contact.jpg" alt="">
+            </p>
             <div class="l-footer__contact-content">
                <p class="c-head01 l-footer__contact-head">
                   <span class="c-head01__main l-footer__contact-main">お問い合わせ</span>
@@ -774,7 +817,9 @@
             <div class="l-footer__wrapper">
                <div class="l-footer__content">
                   <p class="l-footer__logo">
-                     <img src="/assets/img/img_logo.svg" alt="">
+                     <a href="#">
+                        <img src="/assets/img/img_logo.svg" alt="ロゴ">
+                     </a>
                   </p>
                   <a href="tel+8166△×0○123" class="l-footer__number">TEL：06-6△×0-○123</a>
                   <p class="l-footer__address">〒5△0-0×23<br>大阪府大阪市○成区△町△丁目×-○</p>

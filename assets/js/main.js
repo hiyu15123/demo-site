@@ -11,10 +11,6 @@ function headerBtnDrop() {
 
    dropTriggers.forEach((trigger, i) => {
       trigger.addEventListener("click", () => {
-         // dropTriggers.forEach(t => t.classList.remove("is-active"));
-         // dropTargets.forEach(c => c.classList.remove("is-active"));
-         // trigger.classList.add("is-active");
-         // dropTargets[i].classList.add("is-active");
          trigger.classList.toggle("is-active");
          dropTargets[i].classList.toggle("is-active");
       });
@@ -34,7 +30,29 @@ function headerMenuOverlay() {
    });
 }
 
-
+function homeVisualSwiper() {
+   const staffSwiper = new Swiper('.js-visual-swiper', {
+      loop: true,
+      slidesPerView: 1,
+      effect: "fade",
+      speed: 1500,
+      autoplay: {
+         delay: 6000,
+      },
+      pagination: {
+         el: '.swiper-pagination',
+         clickable: true,
+         renderBullet: function (index, className) {
+            return `<span class="${className}"><span class="js-swiper-bar p-visual__bar"></span></span>`;
+         },
+      },
+      on: {
+         init(staffSwiper) {
+            
+         }
+      },
+   });
+}
 
 function aboutUsHover() {
    const aboutUsHoverTrigger = document.querySelectorAll(".js-about-trigger li a");
@@ -66,6 +84,15 @@ function homeStaffSwiper() {
       navigation: {
          nextEl: '.swiper-button-next',
          prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+         768: {
+            slidesPerView: 1.1,
+            spaceBetween: 24,
+         },
+         1000: {
+            slidesPerView: 'auto',
+         }
       },
    });
 }
@@ -109,6 +136,7 @@ function dataCountUp() {
 window.addEventListener('DOMContentLoaded', function() {
    headerBtn();
    headerBtnDrop();
+   homeVisualSwiper();
    aboutUsHover();
    homeStaffSwiper();
    serviceTab();

@@ -7,7 +7,10 @@
       justify-content: space-between;
       @include pc {
          margin-right: calc(50% - 50vw);
-         gap: 4rem;
+         gap: 6rem;
+      }
+      @media (max-width: 1000px) {
+         margin-right: 0;
       }
       @include sp {
          flex-direction: column;
@@ -39,9 +42,6 @@
       }
    }
    &__content {
-      @include pc {
-         min-width: 320px;
-      }
       width: 100%;
       @include sp {
          display: contents;
@@ -80,7 +80,10 @@
    &__swiper {
       width: 100%;
       @include pc {
-         min-width: calc(100% - 320px - 4rem);
+         min-width: calc(100% - 24rem - 4rem);
+      }
+      @media (max-width: 1000px) {
+         min-width: calc(100% - 24rem - 4rem);
       }
    }
    &__swiper-wrapper {

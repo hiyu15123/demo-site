@@ -12,7 +12,7 @@
    }
    &__inner {
       display: flex;
-      gap: 4rem;
+      gap: 6rem;
       justify-content: space-between;
       @include sp {
          gap: 0;
@@ -20,9 +20,6 @@
       }
    }
    &__content {
-      @include pc {
-         min-width: 32rem;
-      }
       @include sp {
          display: contents;
       }
@@ -44,6 +41,12 @@
       padding-right: 6.4rem;
       border-bottom: 1px solid #ddd;
       position: relative;
+      gap: 1.6rem;
+      @media (max-width:1000px) {
+         flex-direction: column;
+         align-items: start;
+         gap: 1.2rem;
+      }
       @include sp {
          padding: 1.6rem 5.4rem 1.6rem 0;
          display: block;
@@ -77,22 +80,20 @@
          }
       }
    }
-   &__date {
-      &+* {
-         margin-left: 1.6rem;
-         @include sp {
-            margin-left: 0.8rem;
-         }
-      }
+   &__detail {
+      display: flex;
+      gap: 1.2rem;
    }
    &__category {
       border: 1px solid var(--color-text);
       border-radius: 1.6rem;
       padding: 0.2rem 1.6rem;
-      line-height: 1.5;
       font-size: 1.4rem;
       min-width: 12rem;
       text-align: center;
+      @media (max-width: 1000px) {
+         font-size: 1.2rem;
+      }
       @include sp {
          display: inline;
       }
@@ -107,6 +108,9 @@
    }
    &__title {
       font-weight: 500;
+      @media (max-width: 1000px) {
+         font-size: 1.4rem;
+      }
    }
    &__icon {
       position: absolute;

@@ -3,9 +3,7 @@
 
 .l-footer{
    &__contact {
-      @include sp {
-         padding-inline: 1.6rem;
-      }
+      padding-inline: 1.6rem;
    }
    &__contact-link {
       margin-bottom: -18.4rem;
@@ -21,28 +19,57 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 4rem;
       position: relative;
+      overflow: hidden;
+      @media (max-width: 1000px) {
+         padding: 4rem;
+      }
       @include sp {
          padding: 2.4rem 1.6rem;
          flex-direction: column;
+         align-items: start;
          gap: 1.6rem;
          margin-bottom: -10rem;
       }
-      &:hover .c-btn {
-         border: 1px solid var(--color-wht);
-         background-color: var(--color-pri);
-         color: var(--color-wht);
-         & .c-icon.-btn {
-            background-color: var(--color-pri);
+      &:hover {
+         & .c-btn {
             border: 1px solid var(--color-wht);
+            background-color: var(--color-pri);
+            color: var(--color-wht);
+            & .c-icon.-btn {
+               background-color: var(--color-pri);
+               border: 1px solid var(--color-wht);
+            }
+            & .c-icon__arrow.-before {
+               left: 0;
+            }
+            & .c-icon__arrow.-after {
+               left: 100%;
+            }
          }
-         & .c-icon__arrow.-before {
-            left: 0;
+         & img {
+            transform: scale(1.05);
          }
-         & .c-icon__arrow.-after {
-            left: 100%;
+         & .l-footer__contact-bgi {
+            opacity: 0.25;
          }
       }
+   }
+   &__contact-bgi {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.15;
+      transition: var(--animation-second);
+   }
+   &__contact-bgi img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 10%;
+      transition: var(--animation-second);
    }
    &__contact-head.c-head01 {
       &+* {
@@ -52,6 +79,9 @@
       }
    }
    &__contact-main.c-head01__main {
+      @media (max-width: 1000px) {
+         font-size: 3.2rem;
+      }
       @include sp {
          font-size: 2.4rem;
       }
@@ -65,9 +95,13 @@
    &__contact-btn.c-btn {
       background-color: var(--color-wht);
       color: var(--color-pri);
-      margin: 0;
       height: 62px;
       display: block;
+      min-width: 24rem;
+      margin-right: 0;
+      @include sp {
+         margin-inline: auto;
+      }
    }
    &__inner {
       background-color: #f1f1f1;

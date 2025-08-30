@@ -173,7 +173,7 @@
       overflow: hidden;
    }
    &__scroll-text {
-      // animation: scroll-left 25s linear infinite both;
+      animation: scroll-left 25s linear infinite both;
       width: calc(1000rem - 2rem);
       display: flex;
       gap: 4rem;
