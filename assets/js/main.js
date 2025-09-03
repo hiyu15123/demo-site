@@ -30,6 +30,22 @@ function headerMenuOverlay() {
    });
 }
 
+function headerScroll() {
+   let lastScroll = 0;
+   window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      const header = document.querySelector('.js-header-scroll');
+      if (78 >= currentScroll) {
+         header.classList.remove('is-scroll-down')
+      } else if (currentScroll > lastScroll) {
+         header.classList.add('is-scroll-down');
+      } else if (currentScroll < lastScroll) {
+         header.classList.remove('is-scroll-down');
+      }
+      lastScroll = currentScroll;
+   });
+}
+
 function homeVisualSwiper() {
    const staffSwiper = new Swiper('.js-visual-swiper', {
       loop: true,
@@ -146,6 +162,7 @@ function dataCountUp() {
 window.addEventListener('DOMContentLoaded', function() {
    headerBtn();
    headerBtnDrop();
+   headerScroll();
    homeVisualSwiper();
    aboutUsHover();
    homeStaffSwiper();

@@ -2,6 +2,11 @@
 @use "../global/mixin" as *;
 
 .l-header {
+   &.is-scroll-down .l-header__inner {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+   }
    &__inner {
       position: fixed;
       display: flex;
@@ -15,6 +20,7 @@
       background-color: #fff;
       z-index: 999;
       box-shadow: 0 6px 8px rgba(0, 0, 0, 0.02);
+      transition: var(--animation-second);
       @media (max-width: 1000px) {
          gap: 2.4rem;
       }
