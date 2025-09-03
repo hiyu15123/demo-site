@@ -43,14 +43,24 @@ function homeVisualSwiper() {
          el: '.swiper-pagination',
          clickable: true,
          renderBullet: function (index, className) {
-            return `<span class="${className}"><span class="js-swiper-bar p-visual__bar"></span></span>`;
+            return `<span class="${className}"><span class="js-visual-swiper-bar p-visual__bar"></span></span>`;
          },
       },
       on: {
          init(staffSwiper) {
-            
+            staffSwiper.emit("slideChange");
+         },
+         slideChange(staffSwiper) {
+            const bars = document.querySelectorAll('.js-visual-swiper-bar');
+            bars.forEach((bar, i) => {
+               bar.classList.remove('is-animating');
+               if (i === staffSwiper.realIndex) {
+                  void bar.offsetWidth;
+                  bar.classList.add('is-animating');
+               }
+            });
          }
-      },
+      }
    });
 }
 
