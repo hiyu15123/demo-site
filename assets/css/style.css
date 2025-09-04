@@ -2130,6 +2130,9 @@ main {
 .p-news__link:hover .c-icon__arrow.-after {
   left: 100%;
 }
+.p-news__date {
+  line-height: 30.5px;
+}
 @media (max-width: 767px) {
   .p-news__date {
     line-height: 27px;

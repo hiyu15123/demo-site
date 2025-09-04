@@ -18,9 +18,9 @@ function headerBtnDrop() {
 }
 
 function headerMenuOverlay() {
-   const overlayTrigger = document.querySelectorAll(".js-header-overlay-trigger");
+   const overlayTriggers = document.querySelectorAll(".js-header-overlay-trigger");
    const overlayTarget = document.querySelector(".js-header-overlay-target");
-   overlayTrigger.forEach((t) => {
+   overlayTriggers.forEach((t) => {
       t.addEventListener("mouseover", () => {
          overlayTarget.classList.add("is-open");
       });
@@ -47,8 +47,8 @@ function headerScroll() {
 }
 
 function scrollSwipe() {
-   const targets = document.querySelectorAll('.js-scroll-swipe');
-   targets.forEach((t) => {
+   const swipeTargets = document.querySelectorAll('.js-scroll-swipe');
+   swipeTargets.forEach((t) => {
       ScrollTrigger.create({
          trigger: t,
          start: 'top 70%',
@@ -121,14 +121,14 @@ function homeVisualSwiper() {
 }
 
 function aboutUsHover() {
-   const aboutUsHoverTrigger = document.querySelectorAll(".js-about-trigger li a");
-   const aboutUsHoverTarget = document.querySelectorAll(".js-about-target li");
-   aboutUsHoverTrigger.forEach((item, i) => {
+   const aboutUsHoverTriggers = document.querySelectorAll(".js-about-trigger li a");
+   const aboutUsHoverTargets = document.querySelectorAll(".js-about-target li");
+   aboutUsHoverTriggers.forEach((item, i) => {
       item.addEventListener('mouseover', () => {
-         aboutUsHoverTrigger.forEach(i => i.classList.remove('is-active'));
-         aboutUsHoverTarget.forEach(t => t.classList.remove('is-active'));
+         aboutUsHoverTriggers.forEach(i => i.classList.remove('is-active'));
+         aboutUsHoverTargets.forEach(t => t.classList.remove('is-active'));
          item.classList.add('is-active');
-         aboutUsHoverTarget[i].classList.add('is-active');
+         aboutUsHoverTargets[i].classList.add('is-active');
       });
    });
 }
@@ -164,15 +164,14 @@ function homeStaffSwiper() {
 }
 
 function serviceTab() {
-   const serviceTabTrigger = document.querySelectorAll(".js-service-trigger li");
-   const serviceTabTarget = document.querySelectorAll(".js-service-target > *");
-
-   serviceTabTrigger.forEach((tab, i) => {
+   const serviceTabTriggers = document.querySelectorAll(".js-service-trigger li");
+   const serviceTabTargets = document.querySelectorAll(".js-service-target > *");
+   serviceTabTriggers.forEach((tab, i) => {
       tab.addEventListener('click', () => {
-         serviceTabTrigger.forEach(t => t.classList.remove('is-active'));
-         serviceTabTarget.forEach(c => c.classList.remove('is-active'));
+         serviceTabTriggers.forEach(t => t.classList.remove('is-active'));
+         serviceTabTargets.forEach(c => c.classList.remove('is-active'));
          tab.classList.add('is-active');
-         serviceTabTarget[i].classList.add('is-active');
+         serviceTabTargets[i].classList.add('is-active');
       });
    });
 }
@@ -180,9 +179,9 @@ function serviceTab() {
 function dataCountUp() {
    const countUpTrigger = document.querySelector(".js-data-trigger");
    const countUpTargets = document.querySelectorAll(".js-data-target");
-   countUpTargets.forEach((target) => {
-      const from = Number(target.dataset.from);
-      const to = Number(target.dataset.to);
+   countUpTargets.forEach((t) => {
+      const from = Number(t.dataset.from);
+      const to = Number(t.dataset.to);
       const number = { count: from };
       gsap.to(number, {
          count: to,
@@ -193,7 +192,7 @@ function dataCountUp() {
             start: "top 60%",
          },
          onUpdate: () => {
-            target.textContent = Math.floor(number.count).toLocaleString();
+            t.textContent = Math.floor(number.count).toLocaleString();
          },
       });
    });
