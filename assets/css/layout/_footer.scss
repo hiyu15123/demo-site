@@ -108,7 +108,7 @@
       padding-top: calc(18.4rem + 6.4rem);
       padding-bottom: 6.4rem;
       @include sp {
-         padding-top: calc(10rem + 1.6rem + 1.6rem);
+         padding-top: calc(12.8rem + 1.6rem + 1.6rem);
       }
    }
    &__wrapper {
@@ -193,6 +193,9 @@
    }
    &__menu > li > ul > li > a {
       font-size: 1.4rem;
+      @include sp {
+         font-size: 1.2rem;
+      }
    }
    &__sub-menu {
       display: flex;

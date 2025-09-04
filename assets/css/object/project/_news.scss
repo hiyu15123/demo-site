@@ -14,6 +14,9 @@
       display: flex;
       gap: 6rem;
       justify-content: space-between;
+      @media (max-width: 1000px) {
+         gap: 4rem;
+      }
       @include sp {
          gap: 0;
          flex-direction: column;
@@ -48,7 +51,7 @@
          gap: 1.2rem;
       }
       @include sp {
-         padding: 1.6rem 5.4rem 1.6rem 0;
+         padding: 1.6rem 5.6rem 1.6rem 0;
          display: block;
       }
       &::before {
@@ -80,9 +83,19 @@
          }
       }
    }
+   &__date {
+      @include sp {
+         line-height: 27px;
+      }
+   }
    &__detail {
       display: flex;
       gap: 1.2rem;
+      &+* {
+         @include sp {
+            margin-top: 0.8rem;
+         }
+      }
    }
    &__category {
       border: 1px solid var(--color-text);

@@ -46,6 +46,46 @@ function headerScroll() {
    });
 }
 
+function scrollSwipe() {
+   const targets = document.querySelectorAll('.js-scroll-swipe');
+   targets.forEach((t) => {
+      ScrollTrigger.create({
+         trigger: t,
+         start: 'top 70%',
+         onEnter: () => {
+            t.classList.add('is-on')
+         }
+      })
+   });
+}
+
+function scrollFadeInStagger() {
+   gsap.from('.js-scroll-fade-in-stagger', 1,{
+      y: 200,
+      opacity: 0,
+      ease: 'power1.out',
+      stagger: 0.1,
+      scrollTrigger: {
+         trigger: '.js-scroll-fade-in-stagger',
+         start: 'top 70%',
+      }
+   })
+}
+
+function scrollFadeIn() {
+   gsap.utils.toArray('.js-scroll-fade-in').forEach(t => {
+      gsap.from(t, 1,{
+         y: 100,
+         opacity: 0,
+         ease: 'power1.out',
+         scrollTrigger: {
+            trigger: t,
+            start: t.dataset.start || 'top 70%',
+         }
+      })
+   })
+}
+
 function homeVisualSwiper() {
    const staffSwiper = new Swiper('.js-visual-swiper', {
       loop: true,
@@ -164,6 +204,9 @@ window.addEventListener('DOMContentLoaded', function() {
    headerBtnDrop();
    headerScroll();
    homeVisualSwiper();
+   scrollSwipe();
+   scrollFadeInStagger();
+   scrollFadeIn();
    aboutUsHover();
    homeStaffSwiper();
    serviceTab();

@@ -26,6 +26,9 @@
       line-height: 1.5;
       font-size: 1.8rem;
       text-align: center;
+      @include sp {
+         font-size: 1.6rem;
+      }
       &+* {
          margin-top: 1.6rem;
          @include sp {
@@ -44,5 +47,8 @@
       color: var(--color-pri);
       font-size: 6rem;
       line-height: 1;
+      @include sp {
+         font-size: 4rem;
+      }
    }
 }
